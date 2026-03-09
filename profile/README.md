@@ -27,7 +27,7 @@
 
 ## What is DojOps?
 
-DojOps is an AI-powered DevOps automation engine that turns natural language into production-ready infrastructure configurations. It supports 12 DevOps tools, 6 LLM providers, 16 specialist agents, 9 security scanners, and a full REST API with a web dashboard — all with structured output enforcement, sandboxed execution, and approval workflows.
+DojOps is an AI-powered DevOps automation engine that turns natural language into production-ready infrastructure configurations. It supports 13 DevOps tools, 6 LLM providers, 16 specialist agents, 10 security scanners, and a full REST API with a web dashboard — all with structured output enforcement, sandboxed execution, and approval workflows.
 
 ```bash
 # Install
@@ -44,11 +44,11 @@ dojops --execute "Set up Terraform for AWS S3 with versioning"
 
 | | |
 |---|---|
-| **12 DevOps Tools** | GitHub Actions, Terraform, Kubernetes, Helm, Ansible, Docker Compose, Dockerfile, Nginx, Makefile, GitLab CI, Prometheus, Systemd |
+| **13 DevOps Tools** | GitHub Actions, Terraform, Kubernetes, Helm, Ansible, Docker Compose, Dockerfile, Nginx, Makefile, GitLab CI, Prometheus, Systemd, Jenkinsfile |
 | **6 LLM Providers** | OpenAI, Anthropic, Ollama, DeepSeek, Google Gemini, GitHub Copilot |
 | **16 Specialist Agents** | Intelligent routing to domain-specific agents + custom agent support |
-| **9 Security Scanners** | npm-audit, pip-audit, Trivy, Gitleaks, Checkov, Hadolint, ShellCheck, Trivy SBOM, Semgrep |
-| **19 API Endpoints** | REST API + web dashboard for team integration |
+| **10 Security Scanners** | npm-audit, pip-audit, Trivy, Gitleaks, Checkov, Hadolint, ShellCheck, Trivy SBOM, Trivy License, Semgrep |
+| **20 API Endpoints** | REST API + web dashboard for team integration |
 | **Sandboxed Execution** | Policy engine, approval workflows, write allowlists, audit trails |
 | **Tool Marketplace** | Publish, discover, and install community tools via [DojOps Hub](https://hub.dojops.ai) |
 | **No Telemetry** | Zero data leaves your machine except to your configured LLM provider |
