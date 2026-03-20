@@ -5,15 +5,15 @@
 <h1 align="center">DojOps</h1>
 
 <p align="center">
-  <strong>Enterprise-grade AI DevOps Automation Engine</strong><br />
-  Generate, validate, and execute infrastructure &amp; CI/CD configurations safely — with structured output enforcement, sandboxed execution, approval workflows, and hash-chained audit trails.
+  <strong>AI DevOps automation engine</strong><br />
+  Describe what you want in plain English. DojOps generates the config, validates it against a schema, and writes it to disk only after you approve.
 </p>
 
 <p align="center">
   <a href="https://dojops.ai">Website</a> &nbsp;&middot;&nbsp;
-  <a href="https://docs.dojops.ai">Documentation</a> &nbsp;&middot;&nbsp;
-  <a href="https://hub.dojops.ai">Skill Marketplace</a> &nbsp;&middot;&nbsp;
-  <a href="https://github.com/dojops/dojops">Get Started</a>
+  <a href="https://docs.dojops.ai">Docs</a> &nbsp;&middot;&nbsp;
+  <a href="https://hub.dojops.ai">Skill marketplace</a> &nbsp;&middot;&nbsp;
+  <a href="https://github.com/dojops/dojops">Get started</a>
 </p>
 
 <p align="center">
@@ -25,46 +25,45 @@
 
 ---
 
-## What is DojOps?
+## What does it do?
 
-DojOps is an AI-powered DevOps automation engine that turns natural language into production-ready infrastructure configurations. It supports 18 built-in skills, 6 LLM providers, 17 specialist agents, 10 security scanners, and a full REST API with a web dashboard — all with structured output enforcement, sandboxed execution, and approval workflows.
+You give DojOps a prompt. It picks the right specialist agent, generates config files (Terraform, Kubernetes, GitHub Actions, Dockerfiles, etc.), validates them against Zod schemas, and writes them only after you approve. Every operation is logged in a hash-chained audit trail.
 
 ```bash
-# Install
 npm i -g @dojops/cli
 
 # Generate a GitHub Actions CI pipeline
 dojops "Create a CI pipeline for a Node.js app with tests and Docker build"
 
-# Plan + execute with approval
+# Plan multiple files, review, then apply
 dojops --execute "Set up Terraform for AWS S3 with versioning"
 ```
 
-## Highlights
+## What's included
 
 | | |
 |---|---|
-| **18 Built-in Skills** | GitHub Actions, Terraform, Kubernetes, Helm, Ansible, Docker Compose, Dockerfile, Nginx, Makefile, GitLab CI, Prometheus, Systemd, Jenkinsfile, Pulumi, ArgoCD, CloudFormation, Grafana, OTel Collector |
-| **38 Hub Skills** | 18 built-in + 20 community skills across CI/CD, containers, monitoring, and security categories |
-| **6 LLM Providers** | OpenAI, Anthropic, Ollama, DeepSeek, Google Gemini, GitHub Copilot |
-| **17 Specialist Agents** | Intelligent routing to domain-specific agents + custom agent support |
-| **10 Security Scanners** | npm-audit, pip-audit, Trivy, Gitleaks, Checkov, Hadolint, ShellCheck, Trivy SBOM, Trivy License, Semgrep |
-| **20+ API Endpoints** | REST API + web dashboard for team integration |
-| **Sandboxed Execution** | Policy engine, approval workflows, write allowlists, audit trails |
-| **Skill Marketplace** | Publish, discover, and install community skills via [DojOps Hub](https://hub.dojops.ai) |
-| **No Telemetry** | Zero data leaves your machine except to your configured LLM provider |
+| 18 built-in skills | GitHub Actions, Terraform, Kubernetes, Helm, Ansible, Docker Compose, Dockerfile, Nginx, Makefile, GitLab CI, Prometheus, Systemd, Jenkinsfile, Pulumi, ArgoCD, CloudFormation, Grafana, OTel Collector |
+| 38 skills on the hub | 18 built-in + 20 community skills across CI/CD, containers, monitoring, and security |
+| 6 LLM providers | OpenAI, Anthropic, Ollama, DeepSeek, Google Gemini, GitHub Copilot |
+| 17 specialist agents | Keyword-based routing to the right agent for each prompt, plus custom agents |
+| 10 security scanners | npm-audit, pip-audit, Trivy, Gitleaks, Checkov, Hadolint, ShellCheck, Trivy SBOM, Trivy License, Semgrep |
+| REST API + dashboard | 20+ endpoints, web UI for teams |
+| Sandboxed execution | Policy engine, approval workflows, write allowlists, audit trails |
+| Skill marketplace | Publish and install community skills via [DojOps Hub](https://hub.dojops.ai) |
+| No telemetry | Nothing leaves your machine except requests to your configured LLM provider |
 
 ## Repositories
 
-| Repository | Description |
+| Repository | What's in it |
 |---|---|
-| [`dojops`](https://github.com/dojops/dojops) | Core monorepo — CLI, API, all `@dojops/*` packages |
-| [`dojops-dops-modules`](https://github.com/dojops/dojops-dops-modules) | Centralized .dops skill files — 38 skills across 5 categories |
-| [`dojops-connectors`](https://github.com/dojops/dojops-connectors) | Connector SDK + implementations (GitHub, GitLab, Jira) |
+| [`dojops`](https://github.com/dojops/dojops) | Main monorepo. CLI, API server, all `@dojops/*` packages |
+| [`dojops-dops-modules`](https://github.com/dojops/dojops-dops-modules) | All 38 `.dops` skill files, organized by category |
+| [`dojops-connectors`](https://github.com/dojops/dojops-connectors) | Connector SDK + GitHub, GitLab, Jira implementations |
 | [`dojops-doc`](https://github.com/dojops/dojops-doc) | Documentation site (Next.js + Nextra) |
 | [`dojops-hub`](https://github.com/dojops/dojops-hub) | Skill marketplace (Next.js + PostgreSQL + Prisma) |
 | [`dojops.ai`](https://github.com/dojops/dojops.ai) | Marketing website |
-| [`homebrew-tap`](https://github.com/dojops/homebrew-tap) | Homebrew formula for macOS/Linux |
+| [`homebrew-tap`](https://github.com/dojops/homebrew-tap) | Homebrew formula for macOS and Linux |
 
 ## Install
 
@@ -84,8 +83,8 @@ brew tap dojops/tap && brew install dojops
 
 ## Contributing
 
-We welcome contributions across all repositories. Each repo includes a `CONTRIBUTING.md` with setup instructions and guidelines. Check the issues in any repo to find something to work on.
+Every repo has a `CONTRIBUTING.md` with setup instructions. Check the issues in any repo to find something to pick up.
 
 ## License
 
-All DojOps repositories are licensed under the [MIT License](https://github.com/dojops/dojops/blob/main/LICENSE).
+MIT. See [LICENSE](https://github.com/dojops/dojops/blob/main/LICENSE).
